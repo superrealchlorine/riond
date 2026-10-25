@@ -18,7 +18,7 @@ N/A
 
 `make`
 
-`make examples` (compiles examples)
+`make examples` (optional, compiles examples)
 
 `sudo make install`
 
