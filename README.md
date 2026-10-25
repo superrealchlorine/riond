@@ -4,7 +4,7 @@ Minimalist Chloride server that streams a single bare-metal Wasm binary.
 
 ## Build dependencies
 
-- C99 compiler (gcc or clang)
+- C99 compiler (gcc or clang, clang is required for compiling examples)
 - make
 
 On Debian/Ubuntu:
@@ -17,6 +17,8 @@ N/A
 ## Building & Installation
 
 `make`
+
+`make examples` (compiles examples)
 
 `sudo make install`
 
