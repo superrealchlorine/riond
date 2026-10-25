@@ -1,0 +1,14 @@
+[Unit]
+Description=Chloride Bytecode Streaming Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/local/bin/riond /var/lib/riond/app.wasm
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
