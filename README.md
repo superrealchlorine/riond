@@ -22,6 +22,8 @@ N/A
 
 ## Systemd Service Setup
 
+How to set up the riond service, using our hello_fb.wasm example application and hosting it over the Internet on port 49130.
+
 `sudo mkdir -p /var/lib/riond`
 
 `sudo cp hello_fb.wasm /var/lib/riond/app.wasm`
