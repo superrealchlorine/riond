@@ -23,15 +23,20 @@ sudo make install
 ## Systemd Service Setup
 
 sudo mkdir -p /var/lib/riond
+
 sudo cp hello_fb.wasm /var/lib/riond/app.wasm
+
 sudo chmod 644 /var/lib/riond/app.wasm
 
+
 sudo cp riond.service /etc/systemd/system/
+
 sudo systemctl daemon-reload
+
 sudo systemctl enable --now riond
 
 ## Usage
 
-riond [wasm_file_path]
+riond [path_to_wasm_file]
 
 example: riond /var/lib/riond/app.wasm
