@@ -16,27 +16,27 @@ N/A
 
 ## Building & Installation
 
-make
+`make`
 
-sudo make install
+`sudo make install`
 
 ## Systemd Service Setup
 
-sudo mkdir -p /var/lib/riond
+`sudo mkdir -p /var/lib/riond`
 
-sudo cp hello_fb.wasm /var/lib/riond/app.wasm
+`sudo cp hello_fb.wasm /var/lib/riond/app.wasm`
 
-sudo chmod 644 /var/lib/riond/app.wasm
+`sudo chmod 644 /var/lib/riond/app.wasm`
 
 
-sudo cp riond.service /etc/systemd/system/
+`sudo cp riond.service /etc/systemd/system/`
 
-sudo systemctl daemon-reload
+`sudo systemctl daemon-reload`
 
-sudo systemctl enable --now riond
+`sudo systemctl enable --now riond`
 
 ## Usage
 
-riond [path_to_wasm_file]
+`riond [path_to_wasm_file]`
 
-example: riond /var/lib/riond/app.wasm
+example: `riond /var/lib/riond/app.wasm`
