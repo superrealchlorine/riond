@@ -1,18 +1,24 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -O2 -std=c99
-TARGET = riond
-PREFIX = /usr/local
+CC ?= gcc
+CFLAGS ?= -O2 -Wall -Wextra -std=c99
+PREFIX ?= /usr/local
 
-all: $(TARGET)
+all: riond
 
-$(TARGET): riond.c
-	$(CC) $(CFLAGS) -o $(TARGET) riond.c
+riond: riond.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+examples:
+	$(MAKE) -C examples
+
+install: riond
+	install -d $(DESTDIR)$(PREFIX)/bin
+	install -m 755 riond $(DESTDIR)$(PREFIX)/bin/riond
+
+uninstall:
+	rm -f $(DESTDIR)$(PREFIX)/bin/riond
 
 clean:
-	rm -f $(TARGET)
+	rm -f riond
+	$(MAKE) -C examples clean
 
-install: $(TARGET)
-	install -d $(DESTDIR)$(PREFIX)/bin
-	install -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin/
-
-.PHONY: all clean install
+.PHONY: all examples install uninstall clean
