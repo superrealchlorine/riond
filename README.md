@@ -12,7 +12,7 @@ On Debian/Ubuntu:
 
 ## Runtime dependencies
 
-None (Standard C library runtime)
+N/A
 
 ## Building & Installation
 
