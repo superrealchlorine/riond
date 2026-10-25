@@ -1,0 +1,37 @@
+# riond
+
+Minimalist Chloride server that streams a single bare-metal Wasm binary.
+
+## Build dependencies
+
+- C99 compiler (gcc or clang)
+- make
+
+On Debian/Ubuntu:
+`sudo apt install build-essential`
+
+## Runtime dependencies
+
+None (Standard C library runtime)
+
+## Building & Installation
+
+make
+
+sudo make install
+
+## Systemd Service Setup
+
+sudo mkdir -p /var/lib/riond
+sudo cp hello_fb.wasm /var/lib/riond/app.wasm
+sudo chmod 644 /var/lib/riond/app.wasm
+
+sudo cp riond.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now riond
+
+## Usage
+
+riond [wasm_file_path]
+
+example: riond /var/lib/riond/app.wasm
